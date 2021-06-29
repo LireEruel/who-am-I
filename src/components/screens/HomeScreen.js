@@ -3,6 +3,7 @@ import { View, Text, Button, StyleSheet } from "react-native";
 import { AuthContext } from "../contexts/context";
 import ScreenContainer from "react-native-screens";
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
