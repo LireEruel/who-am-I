@@ -2,6 +2,7 @@ export const COLORS = {
   GREY: {
     BLACK_RUSSIAN: "#0A0A0B",
     BRIGHT_GREY: "#5A5B60",
+    BRIGHT_YELLOW_GREY: "#ebede4",
   },
   WHITE: {
     WHITE: "#FFFFFF",
@@ -10,9 +11,13 @@ export const COLORS = {
     FIRE_ENGINE_RED: "#D81120",
   },
   YELLOW: {
-    YELLOW: "ffd500",
+    YELLOW: "#ffd500",
   },
   BLUE: {
-    SKYBLUE: "0090ff",
+    SKYBLUE: "#0090ff",
+  },
+  BLACK: {
+    DARKBLUE: "#2a2a40",
+    BLACK: "#000000",
   },
 };
