@@ -6,12 +6,11 @@ import {
   Image,
   Button,
   StyleSheet,
-  IconButton,
 } from "react-native";
 import { COLORS } from "../../styles/styles";
 import { ScrollView } from "react-native-gesture-handler";
 import SkillView from "../common/SkillView";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
 
 const Layout = {
   height: Dimensions.get("window").height,
@@ -55,6 +54,20 @@ const classes = StyleSheet.create({
 });
 
 const HomeScreen = ({ navigation }) => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const caretdown = (
+    <AntDesign name="caretdown" size={24} color="black" onClick={handleClose} />
+  );
+  const caretup = (
+    <AntDesign name="caretup" size={24} color="black" onClick={handleClose} />
+  );
+
   return (
     <ScrollView style={classes.container}>
       <View style={classes.topView}>
@@ -68,7 +81,10 @@ const HomeScreen = ({ navigation }) => {
             <Text style={classes.job}>React Native Dev</Text>
           </View>
         </View>
-        <SkillView />
+        {
+          open ? <SkillView /> : <Text>얍!</Text>
+          //여기 icon button 들어와야함
+        }
       </View>
     </ScrollView>
   );
