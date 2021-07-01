@@ -41,15 +41,13 @@ const classes = StyleSheet.create({
     paddingVertical: 5,
     fontWeight: "bold",
   },
-  skillList: {
-    marginVertical: 5,
-  },
   skillIcon: {
     color: COLORS.BLACK.DARKBLUE,
   },
   skillAtomView: {
     width: 60,
     height: 60,
+    marginVertical: 15,
     borderRadius: 30,
     borderWidth: 2.5,
     borderColor: COLORS.YELLOW.YELLOW,
@@ -66,8 +64,8 @@ const SkillView = () => {
         <Text style={classes.skillText}>Skills</Text>
       </View>
       <ScrollView horizontal style={classes.skillList}>
-        {skillIcons.map((skill) => (
-          <View style={classes.skillAtomView}>
+        {skillIcons.map((skill, index) => (
+          <View style={classes.skillAtomView} key={index}>
             <MaterialCommunityIcons
               style={classes.skillIcon}
               name={skill}

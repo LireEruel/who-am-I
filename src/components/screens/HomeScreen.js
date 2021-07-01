@@ -6,11 +6,14 @@ import {
   Image,
   Button,
   StyleSheet,
+  TouchableOpacity,
 } from "react-native";
 import { COLORS } from "../../styles/styles";
 import { ScrollView } from "react-native-gesture-handler";
 import SkillView from "../common/SkillView";
 import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
+import Card from "../common/Card";
+import StoryData from "../../data/data";
 
 const Layout = {
   height: Dimensions.get("window").height,
@@ -24,8 +27,8 @@ const classes = StyleSheet.create({
   },
   topView: {
     backgroundColor: COLORS.GREY.BRIGHT_YELLOW_GREY,
-    paddingBottom: Layout.height * 0.07,
-    borderBottomLeftRadius: Layout.width * 0.1, // 왼쪽 아래 둥글게 처리, borderBottomRadius는 없어서 왼쪽 오른쪽 각각 적용.
+    paddingBottom: Layout.height * 0.05,
+    borderBottomLeftRadius: Layout.width * 0.1,
     borderBottomRightRadius: Layout.width * 0.1,
   },
   profileView: {
@@ -44,32 +47,39 @@ const classes = StyleSheet.create({
   },
   name: {
     fontSize: 25,
-    fontWeight: "bold",
+    fontFamily: "Roboto_Bold",
     color: COLORS.BLACK.DARKBLUE,
   },
   job: {
     fontSize: 17,
+    fontFamily: "Roboto_Regular",
     color: COLORS.GREY.BRIGHT_GREY,
+  },
+  caret: {
+    marginLeft: 30,
+    marginBottom: 30,
+  },
+  card: {
+    backgroundColor: COLORS.WHITE.WHITE,
+    height: 200,
+    marginHorizontal: 20,
+    marginVertical: 20,
+    borderRadius: Layout.width * 0.03,
   },
 });
 
 const HomeScreen = ({ navigation }) => {
   const [open, setOpen] = useState(false);
+  const [count, setCount] = useState(0);
   const handleOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
   };
-  const caretdown = (
-    <AntDesign name="caretdown" size={24} color="black" onClick={handleClose} />
-  );
-  const caretup = (
-    <AntDesign name="caretup" size={24} color="black" onClick={handleClose} />
-  );
 
   return (
-    <ScrollView style={classes.container}>
+    <View style={classes.container}>
       <View style={classes.topView}>
         <View style={classes.profileView}>
           <Image
@@ -80,13 +90,35 @@ const HomeScreen = ({ navigation }) => {
             <Text style={classes.name}>Jeong Seo Hee</Text>
             <Text style={classes.job}>React Native Dev</Text>
           </View>
+          {open ? (
+            <TouchableOpacity style={classes.caret} onPress={handleClose}>
+              <AntDesign name="caretup" size={24} color="black" />
+            </TouchableOpacity>
+          ) : (
+            <TouchableOpacity style={classes.caret} onPress={handleOpen}>
+              <AntDesign name="caretdown" size={24} color="black" />
+            </TouchableOpacity>
+          )}
         </View>
-        {
-          open ? <SkillView /> : <Text>얍!</Text>
-          //여기 icon button 들어와야함
-        }
+        {open ? <SkillView /> : null}
       </View>
-    </ScrollView>
+      <ScrollView>
+        {StoryData.map((story, index) => (
+          <TouchableOpacity
+            key={index}
+            onPress={() =>
+              navigation.push("Detail", {
+                title: story.title,
+                text: story.text,
+                imageList: story.imageList,
+              })
+            }
+          >
+            <Card title={story.title} text={story.text} image={story.image} />
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+    </View>
   );
 };
 
