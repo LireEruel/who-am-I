@@ -40,7 +40,7 @@ const classes = StyleSheet.create({
 
     color: COLORS.WHITE.WHITE,
     fontFamily: "NotoSans_Bold",
-    marginTop: Layout.height * 0.01,
+    marginTop: Layout.height * 0.1,
   },
   text: {
     fontSize: 15,

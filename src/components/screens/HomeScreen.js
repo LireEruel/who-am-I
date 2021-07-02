@@ -7,6 +7,7 @@ import {
   Button,
   StyleSheet,
   TouchableOpacity,
+  Linking,
 } from "react-native";
 import { COLORS } from "../../styles/styles";
 import { ScrollView } from "react-native-gesture-handler";
@@ -59,6 +60,20 @@ const classes = StyleSheet.create({
     marginLeft: 30,
     marginBottom: 30,
   },
+  contextView: {
+    marginLeft: 30,
+    marginTop: 30,
+  },
+  contectTitle: {
+    fontFamily: "NotoSans_Bold",
+    marginBottom: 10,
+    fontSize: 17,
+  },
+  contectText: {
+    fontFamily: "NotoSans_Regular",
+    marginTop: 5,
+    fontSize: 15,
+  },
   card: {
     backgroundColor: COLORS.WHITE.WHITE,
     height: 200,
@@ -70,7 +85,7 @@ const classes = StyleSheet.create({
 
 const HomeScreen = ({ navigation }) => {
   const [open, setOpen] = useState(false);
-  const [count, setCount] = useState(0);
+
   const handleOpen = () => {
     setOpen(true);
   };
@@ -87,8 +102,8 @@ const HomeScreen = ({ navigation }) => {
             source={require("../../../assets/images/logo.png")}
           />
           <View>
-            <Text style={classes.name}>Jeong Seo Hee</Text>
-            <Text style={classes.job}>React Native Dev</Text>
+            <Text style={classes.name}>Seohee Jeong</Text>
+            <Text style={classes.job}>Front-end Dev</Text>
           </View>
           {open ? (
             <TouchableOpacity style={classes.caret} onPress={handleClose}>
@@ -100,7 +115,23 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           )}
         </View>
-        {open ? <SkillView /> : null}
+        {open ? (
+          <View>
+            <SkillView />
+            <View style={classes.contextView}>
+              <Text style={classes.contectTitle}>Contect Me</Text>
+              <Text style={classes.contectText}>
+                Email : jsh001505@naver.com
+              </Text>
+              <Text
+                style={classes.contectText}
+                onPress={() => Linking.openURL("https://github.com/LireEruel")}
+              >
+                Github : https://github.com/LireEruel
+              </Text>
+            </View>
+          </View>
+        ) : null}
       </View>
       <ScrollView>
         {StoryData.map((story, index) => (

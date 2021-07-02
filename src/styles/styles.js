@@ -17,7 +17,7 @@ export const COLORS = {
     SKYBLUE: "#0090ff",
   },
   BLACK: {
-    DARKBLUE: "#2a2a40",
+    DARKBLUE: "#1e1c2e",
     BLACK: "#000000",
   },
 };

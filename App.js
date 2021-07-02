@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 
 function App() {
   const [loaded] = useFonts(fonts);
-
+  console.log(loaded);
   return !loaded ? null : (
     <NavigationContainer>
       <Stack.Navigator

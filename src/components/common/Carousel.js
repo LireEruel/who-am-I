@@ -24,7 +24,8 @@ const classes = StyleSheet.create({
     width: width * 0.8,
     height: height * 0.6,
     borderRadius: 10,
-    margin: width * 0.1,
+    marginHorizontal: width * 0.1,
+    marginTop: 10,
     justifyContent: "center",
     alignContent: "center",
   },
@@ -32,6 +33,7 @@ const classes = StyleSheet.create({
     maxHeight: height * 0.6,
     maxWidth: width * 0.8,
     borderRadius: 10,
+    resizeMode: "contain",
   },
 });
 

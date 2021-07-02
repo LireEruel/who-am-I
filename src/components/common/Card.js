@@ -20,14 +20,12 @@ const Layout = {
 
 const classes = StyleSheet.create({
   card: {
+    flex: 1,
     backgroundColor: COLORS.WHITE.WHITE,
-    height: 220,
+    height: Layout.height * 0.3,
     marginHorizontal: 20,
     marginVertical: 30,
-    borderBottomLeftRadius: Layout.width * 0.03, // 왼쪽 아래 둥글게 처리, borderBottomRadius는 없어서 왼쪽 오른쪽 각각 적용.
-    borderBottomRightRadius: Layout.width * 0.03,
-    borderTopLeftRadius: Layout.width * 0.03,
-    borderTopRightRadius: Layout.width * 0.03,
+    borderRadius: Layout.width * 0.03,
   },
   textView: {
     paddingHorizontal: 20,
@@ -36,17 +34,19 @@ const classes = StyleSheet.create({
   image: {
     width: "100%",
     height: Layout.height * 0.2,
-    borderBottomLeftRadius: Layout.width * 0.03, // 왼쪽 아래 둥글게 처리, borderBottomRadius는 없어서 왼쪽 오른쪽 각각 적용.
+    borderBottomLeftRadius: Layout.width * 0.03,
     borderBottomRightRadius: Layout.width * 0.03,
   },
   title: {
     fontSize: 25,
     fontFamily: "NotoSans_Bold",
+    paddingBottom: 5,
   },
   text: {
     fontSize: 12,
     color: COLORS.GREY.BRIGHT_GREY,
     fontFamily: "NotoSans_Regular",
+    lineHeight: 17,
   },
 });
 
