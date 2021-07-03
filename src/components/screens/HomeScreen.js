@@ -12,7 +12,7 @@ import {
 import { COLORS } from "../../styles/styles";
 import { ScrollView } from "react-native-gesture-handler";
 import SkillView from "../common/SkillView";
-import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import Card from "../common/Card";
 import StoryData from "../../data/data";
 
@@ -133,7 +133,7 @@ const HomeScreen = ({ navigation }) => {
           </View>
         ) : null}
       </View>
-      <ScrollView>
+      <ScrollView style={classes.scrollView}>
         {StoryData.map((story, index) => (
           <TouchableOpacity
             key={index}

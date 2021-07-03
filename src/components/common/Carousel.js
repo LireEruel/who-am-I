@@ -1,46 +1,47 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   View,
-  Text,
   StyleSheet,
   Dimensions,
   FlatList,
   Animated,
   Image,
 } from "react-native";
-
-const { width, height } = Dimensions.get("window");
+import { COLORS } from "../../styles/styles";
+const Layout = {
+  height: Dimensions.get("window").height,
+  width: Dimensions.get("window").width,
+};
 
 const classes = StyleSheet.create({
-  carousel: {
-    backgroundColor: "yellow",
+  container: {
+    paddingVertical: Layout.height * 0.05,
+  },
+  imageView: {
+    maxWidth: Layout.width * 0.8,
+    maxHeight: Layout.height * 0.5,
+    borderRadius: 10,
+    marginHorizontal: Layout.width * 0.1,
+    justifyContent: "center",
+  },
+  image: {
+    maxHeight: Layout.height * 0.5,
+    maxWidth: Layout.width * 0.8,
+    borderRadius: 10,
+    resizeMode: "contain",
   },
   dotView: {
     flexDirection: "row",
     justifyContent: "center",
-    backgroundColor: "white",
-  },
-  imageView: {
-    width: width * 0.8,
-    height: height * 0.6,
-    borderRadius: 10,
-    marginHorizontal: width * 0.1,
-    marginTop: 10,
-    justifyContent: "center",
-    alignContent: "center",
-  },
-  image: {
-    maxHeight: height * 0.6,
-    maxWidth: width * 0.8,
-    borderRadius: 10,
-    resizeMode: "contain",
   },
 });
 
 const scrollX = new Animated.Value(0);
-let position = Animated.divide(scrollX, width);
 
 const Carousel = ({ data }) => {
+  const scrollX = new Animated.Value(0);
+  let position = Animated.divide(scrollX, Layout.width);
+
   if (data && data.length) {
     return (
       <View style={classes.container}>
@@ -79,8 +80,8 @@ const Carousel = ({ data }) => {
                   opacity,
                   height: 10,
                   width: 10,
-                  backgroundColor: "#595959",
-                  margin: 8,
+                  backgroundColor: COLORS.YELLOW.YELLOW,
+                  marginHorizontal: 8,
                   borderRadius: 5,
                 }}
               />

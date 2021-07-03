@@ -1,19 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Dimensions,
   View,
   Text,
-  Image,
-  Button,
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
 import { COLORS } from "../../styles/styles";
-import { ScrollView } from "react-native-gesture-handler";
-import SkillView from "../common/SkillView";
-import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
-import Card from "../common/Card";
-import StoryData from "../../data/data";
+import { AntDesign } from "@expo/vector-icons";
 import Carousel from "../common/Carousel";
 
 const Layout = {
@@ -23,42 +17,60 @@ const Layout = {
 
 const classes = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: COLORS.BLACK.DARKBLUE,
-    paddingTop: Layout.height * 0.15,
+    flex: 1,
+    paddingTop: Layout.width * 0.1,
   },
-  button: {
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    marginVertical: 10,
-    borderRadius: 5,
+  topView: {
+    flex: 1,
+  },
+  carousel: {
+    flex: 3,
   },
   title: {
     fontSize: 30,
-
     color: COLORS.WHITE.WHITE,
     fontFamily: "NotoSans_Bold",
-    marginTop: Layout.height * 0.1,
+    marginBottom: Layout.height * 0.03,
+    textAlign: "center",
   },
   text: {
     fontSize: 15,
     color: COLORS.WHITE.WHITE,
-    marginTop: Layout.height * 0.02,
     marginHorizontal: Layout.width * 0.05,
     textAlign: "center",
     fontFamily: "NotoSans_Thin",
   },
+  backButton: {
+    padding: 10,
+  },
 });
 
-const DetailScreen = ({ route }) => {
+const DetailScreen = ({ route, navigation }) => {
   const { title, text, imageList } = route.params;
+  const goHome = () => {
+    navigation.push("Home");
+  };
   return (
     <View style={classes.container}>
-      <Text style={classes.title}>{title}</Text>
-      <Text style={classes.text}>{text}</Text>
-      <Carousel data={imageList} />
+      <View style={classes.topView}>
+        <TouchableOpacity style={classes.backButton}>
+          <AntDesign
+            name="caretleft"
+            size={24}
+            color={COLORS.YELLOW.YELLOW}
+            onPress={goHome}
+          />
+        </TouchableOpacity>
+
+        <Text style={classes.title}>{title}</Text>
+        <Text style={classes.text}>{text}</Text>
+      </View>
+      <View style={classes.carousel}>
+        <Carousel data={imageList} />
+      </View>
     </View>
   );
 };

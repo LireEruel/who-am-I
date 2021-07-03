@@ -1,4 +1,3 @@
-const ICON = require("../../assets/images/logo.png");
 const Profile = require("../../assets/images/profile_image.png");
 const FirstLineTitle = require("../../assets/images/firstLineTitle.png");
 const FirstLineMyPage = require("../../assets/images/firstLineMyPage.png");
@@ -23,13 +22,15 @@ const Before = require("../../assets/images/before.jpg");
 const AfterDetail = require("../../assets/images/afterDetail.png");
 const After = require("../../assets/images/after.png");
 const HCLT_logo = require("../../assets/images/HCLT_logo.png");
+const HCLT_thank = require("../../assets/images/HCLT_thank.png");
+const HCLT_View = require("../../assets/images/HCLT_View.png");
 
 const STORY = [
   {
     title: "I am Seohee",
     image: Profile,
     text:
-      "저는 UI/UX 를 소중히 하는 개발자입니다.\n주로 웹과 모바일 디자인 및 제작에 관심이 있습니다.",
+      "저는 UI/UX 를 소중히 하는 프론트엔드 개발자입니다.\n주로 웹과 모바일 디자인 및 제작에 관심이 있습니다. Git, GitLab과 같은 버전관리 및 협업도구에 익숙하고 photoshop과 같은 디자인툴에도 능합니다.",
     imageList: [{ id: 0, image: Profile }],
   },
   {
@@ -77,7 +78,7 @@ const STORY = [
     title: "UI 디자인 외주",
     image: Before,
     text:
-      "심리학 앱 제작 중 클라이언트와 개발자 사이에 UI 관련 소통이 잘 되지 않아 제게 의뢰를 요청했습니다.\n요청받은 개선사항은 2가지였습니다.\n1. 화면이 작은 기기에서는 문항이 잘 보이지 않는다. 2. 글자가 의미 전달이 되지 않고 글자로만 보인다.\n 이를 해결하기 위해 낭비되는 공간이 없도록 UI를 재배치했습니다. 눈에 편안한 색상을 사용하고 글자와 배경의 대비를 키우고 폰트 크기도 늘렸습니다",
+      "심리학 앱 제작 중 클라이언트와 개발자 사이에 UI 관련 소통이 잘 되지 않아 제게 의뢰를 요청했습니다.\n요청받은 개선사항은 2가지였습니다.\n1. 화면이 작은 기기에서는 문항이 잘 보이지 않는다.\n 2. 글자가 의미 전달이 되지 않고 글자로만 보인다.\n 이를 해결하기 위해 낭비되는 공간이 없도록 UI를 재배치했습니다. 눈에 편안한 색상을 사용하고 글자와 배경의 대비를 키우고 폰트 크기도 늘렸습니다",
     imageList: [
       { id: 0, image: Before },
       { id: 1, image: After },
@@ -88,11 +89,11 @@ const STORY = [
     title: "HCLT2020 운영",
     image: HCLT_logo,
     text:
-      "한국 정보 과학회에서 주최하는 한글 및 한국어 정보처리 학술대회의 운영인력으로 일했습니다. 학회 측에서도 첫 온라인 학회라 어떤 레퍼런스도 없는 상황에서 19개의 대기 화면을 제작했습니다. 하지만 큰 호응을 얻으며, 좋은 결과물이 나와 제가 디자인한 이미지가 다음 학회를 위한 인수인계 자료에 포함이 되었습니다.",
+      "한국 정보 과학회에서 주최하는 한글 및 한국어 정보처리 학술대회의 운영인력으로 일했습니다. 학회 측에서도 첫 온라인 학회라 어떤 레퍼런스도 없는 상황에서 19개의 대기 화면을 제작했습니다. 하지만 좋은 결과물이 큰 호응을 얻으며 나와 제가 디자인한 이미지가 다른 학회들을 위한 인수인계 자료에 포함이 되었습니다.",
     imageList: [
       { id: 0, image: HCLT_logo },
-      { id: 1, image: After },
-      { id: 2, image: AfterDetail },
+      { id: 1, image: HCLT_thank },
+      { id: 2, image: HCLT_View },
     ],
   },
 ];
