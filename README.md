@@ -10,3 +10,10 @@
 4. 휴대폰에 Expo 어플을 다운받아주세요.
 5. expo 어플로 qr코드를 스캔합니다.
 
+#실행 화면
+
+* 주위 소음이 함께 녹화가 되어서 소리는 꺼주세요! *
+
+
+https://user-images.githubusercontent.com/47496422/124362048-aef88280-dc6d-11eb-87eb-77a6a072a59a.mp4
+
