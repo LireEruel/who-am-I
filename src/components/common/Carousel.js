@@ -36,8 +36,6 @@ const classes = StyleSheet.create({
   },
 });
 
-const scrollX = new Animated.Value(0);
-
 const Carousel = ({ data }) => {
   const scrollX = new Animated.Value(0);
   let position = Animated.divide(scrollX, Layout.width);
@@ -62,9 +60,6 @@ const Carousel = ({ data }) => {
               </View>
             );
           }}
-          onScroll={Animated.event([
-            { nativeEvent: { contentOffset: { x: scrollX } } },
-          ])}
         />
         <View style={classes.dotView}>
           {data.map((_, i) => {
@@ -73,6 +68,7 @@ const Carousel = ({ data }) => {
               outputRange: [0.3, 1, 0.3],
               extrapolate: "clamp",
             });
+
             return (
               <Animated.View
                 key={i}
@@ -91,7 +87,7 @@ const Carousel = ({ data }) => {
       </View>
     );
   }
-  console.log("이미지 없어용");
+  console.log("이미지가 존재하지 않습니다.");
   return null;
 };
 
